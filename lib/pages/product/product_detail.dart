@@ -1,6 +1,7 @@
 // @dart=2.9
 import 'package:flutter/material.dart';
 import 'package:food_app/pages/config.dart';
+import 'package:food_app/pages/shopping/shopping.dart';
 
 class ProductDetail extends StatefulWidget {
   @override
@@ -48,7 +49,10 @@ class _ProductDetailState extends State<ProductDetail> {
                   ],
                   borderRadius: BorderRadius.circular(15.0)),
               child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Shopping()));
+                },
                 icon: Icon(Icons.shopping_cart),
                 color: PrimaryColor,
               ))
@@ -172,7 +176,7 @@ class _ProductDetailState extends State<ProductDetail> {
                   ),
                   Padding(padding: EdgeInsets.only(bottom: 15.0)),
                   const Text(
-                    "Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés",
+                    "Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats GrillésPlats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés Plats Grillés ",
                     style: TextStyle(
                         fontSize: 16.0,
                         fontFamily: 'RadioCanada',

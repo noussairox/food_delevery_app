@@ -1,6 +1,8 @@
 // @dart=2.9
 
 import 'package:flutter/material.dart';
+import 'package:food_app/pages/account/changepassword.dart';
+import 'package:food_app/pages/account/myprofile.dart';
 import 'package:food_app/pages/config.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -11,6 +13,7 @@ class MyDrawer extends StatefulWidget {
 class _MyDrawerState extends State<MyDrawer> {
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context).copyWith(dividerColor: Colors.transparent);
     return Container(
       child: Drawer(
         child: Directionality(
@@ -18,14 +21,14 @@ class _MyDrawerState extends State<MyDrawer> {
           child: ListView(
             children: <Widget>[
               UserAccountsDrawerHeader(
-                accountName: Text(
+                accountName: const Text(
                   "Noussair Abellouch",
                   style: TextStyle(
                       fontSize: 20.0,
                       color: Colors.black,
                       fontFamily: 'RadioCanada'),
                 ),
-                accountEmail: Text(
+                accountEmail: const Text(
                   "abellouch34@gmail.com",
                   style: TextStyle(color: Colors.grey),
                 ),
@@ -66,29 +69,82 @@ class _MyDrawerState extends State<MyDrawer> {
                   ],
                 ),
               ),
-              InkWell(
-                onTap: () {},
-                child: Column(
-                  children: <Widget>[
-                    const ListTile(
-                      title: Text(
-                        "Mon compte",
-                        style: TextStyle(
-                            fontFamily: 'RadioCanada', fontSize: 18.0),
-                      ),
-                      leading: Icon(
-                        Icons.account_box,
-                        color: PrimaryColor,
-                      ),
-                      trailing: Icon(
-                        Icons.arrow_forward_ios,
-                        color: Colors.grey,
-                        size: 18.5,
+              Theme(
+                data: theme,
+                child: ExpansionTile(
+                  title: const Text(
+                    "Mon Compte",
+                    style: TextStyle(fontFamily: 'RadioCanada', fontSize: 18.0),
+                  ),
+                  leading: Icon(
+                    Icons.account_box,
+                    color: PrimaryColor,
+                  ),
+                  children: [
+                    //-------------------------Child Account
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => MyProfile()));
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          const ListTile(
+                            title: Text(
+                              "Changez les informations personnelles",
+                              style: TextStyle(
+                                  fontFamily: 'RadioCanada', fontSize: 16.0),
+                            ),
+                            leading: Icon(
+                              Icons.manage_accounts_outlined,
+                              color: PrimaryColor,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.grey,
+                              size: 18.5,
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey[500],
+                          ),
+                        ],
                       ),
                     ),
-                    Divider(
-                      color: Colors.grey[500],
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChangePassword()));
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          const ListTile(
+                            title: Text(
+                              "Changez le mot de passe",
+                              style: TextStyle(
+                                  fontFamily: 'RadioCanada', fontSize: 16.0),
+                            ),
+                            leading: Icon(
+                              Icons.settings,
+                              color: PrimaryColor,
+                            ),
+                            trailing: Icon(
+                              Icons.arrow_forward_ios,
+                              color: Colors.grey,
+                              size: 18.5,
+                            ),
+                          ),
+                          Divider(
+                            color: Colors.grey[500],
+                          ),
+                        ],
+                      ),
                     ),
+                    //-------------------------End child account
                   ],
                 ),
               ),
@@ -124,12 +180,64 @@ class _MyDrawerState extends State<MyDrawer> {
                   children: <Widget>[
                     const ListTile(
                       title: Text(
-                        "Deconnection",
+                        "Mes Commandes",
                         style: TextStyle(
                             fontFamily: 'RadioCanada', fontSize: 18.0),
                       ),
                       leading: Icon(
-                        Icons.reset_tv,
+                        Icons.history,
+                        color: PrimaryColor,
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 18.5,
+                      ),
+                    ),
+                    Divider(
+                      color: Colors.grey[500],
+                    ),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Column(
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text(
+                        "A propos de nous",
+                        style: TextStyle(
+                            fontFamily: 'RadioCanada', fontSize: 18.0),
+                      ),
+                      leading: Icon(
+                        Icons.message,
+                        color: PrimaryColor,
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 18.5,
+                      ),
+                    ),
+                    Divider(
+                      color: Colors.grey[500],
+                    ),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () {},
+                child: Column(
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text(
+                        "Contactez-nous",
+                        style: TextStyle(
+                            fontFamily: 'RadioCanada', fontSize: 18.0),
+                      ),
+                      leading: Icon(
+                        Icons.phone,
                         color: PrimaryColor,
                       ),
                       trailing: Icon(

@@ -145,7 +145,7 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: 108,
+                height: 120,
                 child: ListView.builder(
                     itemCount: myarr_categories.length,
                     scrollDirection: Axis.horizontal,
@@ -158,7 +158,7 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height - 360,
+                height: MediaQuery.of(context).size.height - 368,
                 child: ListView.builder(
                     itemCount: myarr_product.length,
                     itemBuilder: (BuildContext context, int index) {
