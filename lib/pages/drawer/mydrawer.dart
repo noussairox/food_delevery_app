@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:food_app/pages/account/changepassword.dart';
 import 'package:food_app/pages/account/myprofile.dart';
 import 'package:food_app/pages/config.dart';
+import 'package:food_app/pages/favorite/favorite.dart';
+import 'package:food_app/pages/product/category.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -55,6 +57,35 @@ class _MyDrawerState extends State<MyDrawer> {
                       ),
                       leading: Icon(
                         Icons.home,
+                        color: PrimaryColor,
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 18.5,
+                      ),
+                    ),
+                    Divider(
+                      color: Colors.grey[500],
+                    ),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Category()));
+                },
+                child: Column(
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text(
+                        "Menu",
+                        style: TextStyle(
+                            fontFamily: 'RadioCanada', fontSize: 18.0),
+                      ),
+                      leading: Icon(
+                        Icons.restaurant_menu,
                         color: PrimaryColor,
                       ),
                       trailing: Icon(
@@ -149,7 +180,10 @@ class _MyDrawerState extends State<MyDrawer> {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Favorite()));
+                },
                 child: Column(
                   children: <Widget>[
                     const ListTile(
