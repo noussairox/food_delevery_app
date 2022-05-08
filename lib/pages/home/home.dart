@@ -158,7 +158,7 @@ class _HomeState extends State<Home> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height - 368,
+                height: MediaQuery.of(context).size.height / 3 + 150,
                 child: ListView.builder(
                     itemCount: myarr_product.length,
                     itemBuilder: (BuildContext context, int index) {

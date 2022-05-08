@@ -33,6 +33,7 @@ dependencies:
   page_indicator: ^0.4.1
   font_awesome_flutter: ^10.1.0
   google_fonts: ^2.3.2
+  timeline_tile: ^2.0.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -69,6 +70,7 @@ flutter:
    - images/tip1.png
    - images/tip2.png
    - images/tip3.png
+   - images/achraf.png
    - images/product/prod1.jpg
    - images/product/prod2.jpg
    - images/product/prod3.jpg

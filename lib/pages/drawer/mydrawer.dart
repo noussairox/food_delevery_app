@@ -5,7 +5,9 @@ import 'package:food_app/pages/account/changepassword.dart';
 import 'package:food_app/pages/account/myprofile.dart';
 import 'package:food_app/pages/config.dart';
 import 'package:food_app/pages/favorite/favorite.dart';
+import 'package:food_app/pages/order/tracking.dart';
 import 'package:food_app/pages/product/category.dart';
+import 'package:food_app/pages/shopping/shopping.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -209,7 +211,10 @@ class _MyDrawerState extends State<MyDrawer> {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Shopping()));
+                },
                 child: Column(
                   children: <Widget>[
                     const ListTile(
@@ -220,6 +225,35 @@ class _MyDrawerState extends State<MyDrawer> {
                       ),
                       leading: Icon(
                         Icons.history,
+                        color: PrimaryColor,
+                      ),
+                      trailing: Icon(
+                        Icons.arrow_forward_ios,
+                        color: Colors.grey,
+                        size: 18.5,
+                      ),
+                    ),
+                    Divider(
+                      color: Colors.grey[500],
+                    ),
+                  ],
+                ),
+              ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Tracking()));
+                },
+                child: Column(
+                  children: <Widget>[
+                    const ListTile(
+                      title: Text(
+                        "Suivi du commande",
+                        style: TextStyle(
+                            fontFamily: 'RadioCanada', fontSize: 18.0),
+                      ),
+                      leading: Icon(
+                        Icons.history_toggle_off_rounded,
                         color: PrimaryColor,
                       ),
                       trailing: Icon(

@@ -69,6 +69,94 @@ class _ShoppingState extends State<Shopping> {
       "pro_qty": "3",
     }
   ];
+  void _showSheetMessage(context) {
+    showModalBottomSheet(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          topLeft: Radius.circular(25),
+          topRight: Radius.circular(25),
+        )),
+        context: context,
+        builder: (BuildContext bc) {
+          return Container(
+            child: ListView(
+              children: [
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      margin: EdgeInsets.only(top: 30.0, bottom: 30.0),
+                      child: Icon(
+                        Icons.done_all,
+                        color: PrimaryColor,
+                        size: 72,
+                      ),
+                    ),
+                    Text(
+                      "Merci pour votre commande",
+                      style: TextStyle(
+                          color: PrimaryColor,
+                          fontSize: 35.0,
+                          fontWeight: FontWeight.bold,
+                          fontFamily: 'MsMadi'),
+                    ),
+                    Text(
+                      "Vous pouvez suivre votre commande en appuyant sur le boutton au dessous",
+                      style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 16.0,
+                          fontFamily: 'RadioCanada'),
+                      textAlign: TextAlign.center,
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.0),
+                      child: MaterialButton(
+                        child: Container(
+                          margin: EdgeInsets.all(20),
+                          padding: EdgeInsets.only(top: 11),
+                          width: MediaQuery.of(context).size.width,
+                          height: 50,
+                          child: Text(
+                            "Suivre ma commande",
+                            textAlign: TextAlign.center,
+                            style:
+                                TextStyle(color: Colors.white, fontSize: 20.0),
+                          ),
+                          decoration: BoxDecoration(
+                              color: PrimaryColor,
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 5.0),
+                      child: MaterialButton(
+                        child: Container(
+                          margin: EdgeInsets.all(0),
+                          padding: EdgeInsets.only(top: 11),
+                          width: MediaQuery.of(context).size.width - 65,
+                          height: 50,
+                          child: Text(
+                            "Commandez de nouveau",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(fontSize: 20.0),
+                          ),
+                          decoration: BoxDecoration(
+                              color: Colors.grey[100],
+                              borderRadius: BorderRadius.circular(15)),
+                        ),
+                        onPressed: () {},
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,7 +194,9 @@ class _ShoppingState extends State<Shopping> {
         child: Row(
           children: [
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                _showSheetMessage(context);
+              },
               child: Row(
                 children: [
                   Icon(
