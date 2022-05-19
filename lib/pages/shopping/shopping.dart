@@ -1,6 +1,8 @@
 // @dart=2.9
+
 import 'package:flutter/material.dart';
 import 'package:food_app/pages/config.dart';
+import 'package:food_app/pages/order/tracking.dart';
 
 class Shopping extends StatefulWidget {
   @override
@@ -126,7 +128,12 @@ class _ShoppingState extends State<Shopping> {
                               color: PrimaryColor,
                               borderRadius: BorderRadius.circular(15)),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: ((context) => Tracking())));
+                        },
                       ),
                     ),
                     Padding(
